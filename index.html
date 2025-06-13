@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário, Vívian</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <div class="text-section">
+                <h1 class="title">Feliz Aniversário, Vívian</h1>
+                
+                <div class="message">
+                    <p>Não sou muito bom com palavras, nunca fui. Na verdade, nunca escrevi texto nenhum assim… mas hoje, no seu aniversário, resolvi tentar. Porque por mais que as coisas tenham mudado entre a gente, você ainda é alguém que marcou a minha vida de um jeito especial.</p>
+                    
+                    <p>A gente viveu uma história intensa. Teve carinho, risos, momentos bons… e também brigas que poderiam ter sido evitadas. Orgulho demais, talvez sentimento demais também. Mas mesmo com tudo isso, teve verdade. E isso ninguém apaga.</p>
+                    
+                    <p>Aprendi muito com você. Sobre sentir, sobre escutar, sobre cuidar. Aprendi que o amor não é só sobre gostar, mas também sobre saber lidar. E mesmo com os erros, eu guardo tudo o que a gente viveu com muito respeito no coração.</p>
+                    
+                    <p>Hoje só quero te desejar um aniversário cheio de paz, leveza, e pessoas que te façam bem. Que você continue sendo essa mulher incrível, com esse brilho que não passa despercebido.</p>
+                    
+                    <p>E cuida bem daquele colar, tá? Você sempre dizia que eu nunca te dava nada especial… e, sem você falar nada, acabei acertando justo no que você gosta. Vai ver que, no meio de tanta bagunça, eu te enxergava melhor do que parecia.</p>
+                    
+                    <p class="signature">Feliz aniversário, Vívian.<br>
+                    Mesmo distante, tem um carinho aqui que continua firme, quieto… mas verdadeiro.</p>
+                </div>
+                
+                <!-- Player de Música Estilo Spotify -->
+                <div class="music-player">
+                    <div class="player-header">
+                        <div class="album-cover">
+                            <img src="henrique-juliano.jpg" alt="Henrique & Juliano">
+                        </div>
+                        <div class="song-info">
+                            <div class="song-title">Recaídas</div>
+                            <div class="artist-name">Henrique & Juliano</div>
+                        </div>
+                    </div>
+                    
+                    <div class="player-controls">
+                        <button id="playPauseBtn" class="play-btn">
+                            <span class="play-icon">▶️</span>
+                        </button>
+                    </div>
+                    
+                    <div class="progress-container">
+                        <span class="time-current" id="currentTime">0:00</span>
+                        <div class="progress-bar" id="progressBar">
+                            <div class="progress-fill" id="progressFill"></div>
+                            <div class="progress-handle" id="progressHandle"></div>
+                        </div>
+                        <span class="time-total" id="totalTime">0:00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="polaroid-gallery">
+                <div class="polaroid" style="--delay: 0s; --rotation: -8deg;">
+                    <div class="polaroid-inner">
+                        <img src="0931C14C-814D-44FD-8FD6-FA1DAC7CF501.jpeg" alt="Foto 1">
+                        <div class="polaroid-shadow"></div>
+                    </div>
+                </div>
+                
+                <div class="polaroid" style="--delay: 0.5s; --rotation: 5deg;">
+                    <div class="polaroid-inner">
+                        <img src="FullSizeRender.jpeg" alt="Foto 2">
+                        <div class="polaroid-shadow"></div>
+                    </div>
+                </div>
+                
+                <div class="polaroid" style="--delay: 1s; --rotation: -3deg;">
+                    <div class="polaroid-inner">
+                        <img src="fa0c367c-75c9-44d0-a70e-f8f6b12bdcd1.jpeg" alt="Foto 3">
+                        <div class="polaroid-shadow"></div>
+                    </div>
+                </div>
+                
+                <div class="polaroid" style="--delay: 1.5s; --rotation: 7deg;">
+                    <div class="polaroid-inner">
+                        <img src="4D6D5702-F2AB-49BA-9F84-6B688C98EB1E.jpeg" alt="Foto 4">
+                        <div class="polaroid-shadow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="backgroundMusic" loop preload="auto">
+        <source src="romantico.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+

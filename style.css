@@ -1,0 +1,532 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    background: #1a1a1a;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    z-index: -1;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.text-section {
+    flex: 1;
+    max-width: 600px;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #FFB6C1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: fadeInTitle 2s ease-out;
+}
+
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message {
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.message p {
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    animation: fadeInText 1s ease-out forwards;
+    opacity: 0;
+}
+
+.message p:nth-child(1) { animation-delay: 0.5s; }
+.message p:nth-child(2) { animation-delay: 0.7s; }
+.message p:nth-child(3) { animation-delay: 0.9s; }
+.message p:nth-child(4) { animation-delay: 1.1s; }
+.message p:nth-child(5) { animation-delay: 1.3s; }
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.signature {
+    text-align: center;
+    font-style: italic;
+    color: #FFB6C1;
+    font-size: 1.1rem;
+    margin-top: 30px !important;
+    font-weight: bold;
+    animation-delay: 1.5s !important;
+}
+
+/* Player de Música Estilo Spotify */
+.music-player {
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: slideInPlayer 1s ease-out 2s both;
+}
+
+@keyframes slideInPlayer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.player-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.album-cover {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.album-cover:hover {
+    transform: scale(1.05);
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.song-info {
+    flex: 1;
+}
+
+.song-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFB6C1;
+    margin-bottom: 2px;
+}
+
+.artist-name {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.play-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.6);
+}
+
+.play-btn:active {
+    transform: scale(0.95);
+}
+
+.play-icon {
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.time-current, .time-total {
+    min-width: 35px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.progress-bar:hover {
+    height: 8px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FF69B4, #FFB6C1);
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.1s ease;
+    position: relative;
+}
+
+.progress-handle {
+    width: 12px;
+    height: 12px;
+    background: #FFB6C1;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 2px 8px rgba(255, 182, 193, 0.5);
+}
+
+.progress-bar:hover .progress-handle {
+    opacity: 1;
+}
+
+/* Polaroids Realistas */
+.polaroid-gallery {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 500px;
+    perspective: 1000px;
+}
+
+.polaroid {
+    position: relative;
+    animation: floatInPolaroid 1.2s ease-out var(--delay, 0s) both;
+}
+
+@keyframes floatInPolaroid {
+    from {
+        opacity: 0;
+        transform: translateY(80px) rotate(var(--rotation, 0deg)) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(var(--rotation, 0deg)) scale(1);
+    }
+}
+
+.polaroid-inner {
+    background: #f8f8f8;
+    padding: 20px 20px 60px 20px;
+    border-radius: 3px;
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.1),
+        0 8px 16px rgba(0, 0, 0, 0.1),
+        0 16px 32px rgba(0, 0, 0, 0.1);
+    transform: rotate(var(--rotation, 0deg));
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    cursor: pointer;
+}
+
+.polaroid-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.2) 0%, 
+        rgba(255, 255, 255, 0) 50%, 
+        rgba(0, 0, 0, 0.05) 100%);
+    border-radius: 3px;
+    pointer-events: none;
+}
+
+.polaroid-inner:hover {
+    transform: rotate(0deg) scale(1.05) translateY(-10px);
+    box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.15),
+        0 16px 32px rgba(0, 0, 0, 0.15),
+        0 32px 64px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.polaroid-shadow {
+    position: absolute;
+    bottom: -10px;
+    left: 5px;
+    right: 5px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    filter: blur(8px);
+    transform: scale(0.9);
+    transition: all 0.4s ease;
+}
+
+.polaroid-inner:hover .polaroid-shadow {
+    transform: scale(1.1);
+    opacity: 0.3;
+}
+
+.polaroid img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2px;
+    display: block;
+    filter: sepia(5%) contrast(1.1) brightness(1.05);
+}
+
+/* Efeito de emojis flutuantes (apenas corações, balões, confetes, estrelas) */
+.floating-emoji {
+    position: fixed;
+    font-size: 25px;
+    pointer-events: none;
+    z-index: 1000;
+    animation: floatUpSmooth 12s linear forwards;
+}
+
+@keyframes floatUpSmooth {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .polaroid-gallery {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .text-section {
+        padding: 30px 20px;
+    }
+    
+    .message {
+        font-size: 0.9rem;
+    }
+    
+    .polaroid-gallery {
+        gap: 30px;
+        max-width: 350px;
+    }
+    
+    .polaroid img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .polaroid-inner {
+        padding: 15px 15px 45px 15px;
+    }
+    
+    .container {
+        padding: 20px 10px;
+    }
+    
+    .music-player {
+        padding: 15px;
+    }
+    
+    .play-btn {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .play-icon {
+        font-size: 1.2rem;
+    }
+    
+    .album-cover {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .song-title {
+        font-size: 1rem;
+    }
+    
+    .artist-name {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .text-section {
+        padding: 20px 15px;
+    }
+    
+    .message {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+    
+    .polaroid img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .polaroid-inner {
+        padding: 12px 12px 35px 12px;
+    }
+    
+    .polaroid-gallery {
+        gap: 20px;
+        max-width: 280px;
+    }
+    
+    .progress-container {
+        font-size: 0.7rem;
+        gap: 8px;
+    }
+    
+    .time-current, .time-total {
+        min-width: 30px;
+    }
+    
+    .player-header {
+        gap: 10px;
+    }
+    
+    .album-cover {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .song-title {
+        font-size: 0.9rem;
+    }
+    
+    .artist-name {
+        font-size: 0.7rem;
+    }
+}
+
